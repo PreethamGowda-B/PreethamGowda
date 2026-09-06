@@ -1,0 +1,489 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #07080b;
+  --bg-secondary: #0d0f14;
+  --bg-tertiary: #141721;
+  --card-bg: rgba(14, 18, 26, 0.75);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-hover-border: rgba(34, 211, 238, 0.35);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent-cyan: #06b6d4;
+  --accent-indigo: #6366f1;
+  --accent-emerald: #10b981;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+html.light,
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --card-bg: rgba(255, 255, 255, 0.92);
+  --card-border: rgba(15, 23, 42, 0.08);
+  --card-hover-border: rgba(8, 145, 178, 0.45);
+  --text-primary: #090d16;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --accent-cyan: #0891b2;
+  --accent-indigo: #4f46e5;
+  --accent-emerald: #059669;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+::selection {
+  background-color: rgba(6, 182, 212, 0.25);
+  color: #ffffff;
+}
+
+html.light ::selection {
+  background-color: rgba(8, 145, 178, 0.2);
+  color: #090d16;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #07080b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e2433;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3347;
+}
+
+html.light ::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Engineering dot grid pattern */
+.bg-tech-grid {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+html.light .bg-tech-grid {
+  background-image: radial-gradient(rgba(15, 23, 42, 0.07) 1px, transparent 1px);
+}
+
+.bg-radial-gradient {
+  background: radial-gradient(circle at 50% 0%, rgba(34, 211, 238, 0.08) 0%, transparent 65%);
+}
+
+html.light .bg-radial-gradient {
+  background: radial-gradient(circle at 50% 0%, rgba(8, 145, 178, 0.06) 0%, transparent 65%);
+}
+
+.glow-border {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+html.light .glow-border {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.06) 0%, rgba(15, 23, 42, 0.01) 100%);
+}
+
+.glass-panel {
+  background: rgba(13, 16, 23, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  border-radius: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: #475569;
+}
+
+.form-input:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 1px #22d3ee;
+}
+
+html.light .form-input {
+  background-color: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  color: #090d16;
+}
+
+html.light .form-input::placeholder {
+  color: #94a3b8;
+}
+
+html.light .form-input:focus {
+  border-color: #0891b2;
+  box-shadow: 0 0 0 1px #0891b2;
+}
+
+.palette-input {
+  width: 100%;
+  background: transparent;
+  color: #ffffff;
+  outline: none;
+  font-size: 0.875rem;
+}
+
+.palette-input::placeholder {
+  color: #64748b;
+}
+
+html.light .palette-input {
+  color: #090d16;
+}
+
+html.light .palette-input::placeholder {
+  color: #94a3b8;
+}
+
+/* ========================================================
+   LIGHT THEME CLASS REMAPPING (High-Contrast & Refined)
+   ======================================================== */
+
+html.light .bg-\[\#07080b\],
+html.light [data-theme-root] {
+  background-color: #f8fafc !important;
+}
+
+html.light .text-white,
+html.light .text-slate-100 {
+  color: #090d16 !important;
+}
+
+html.light .text-slate-200,
+html.light .text-slate-300 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-400 {
+  color: #475569 !important;
+}
+
+html.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+html.light .bg-\[\#0c101a\],
+html.light .bg-\[\#0c0f17\],
+html.light .bg-white\/2,
+html.light .bg-white\/3 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-white\/5 {
+  background-color: #f8fafc !important;
+}
+
+html.light .bg-white\/10 {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .bg-black\/40,
+html.light .bg-black\/50,
+html.light .bg-black\/60 {
+  background-color: #f1f5f9 !important;
+}
+
+html.light .border-white\/5,
+html.light .border-white\/10,
+html.light .border-white\/15,
+html.light .border-white\/20 {
+  border-color: rgba(15, 23, 42, 0.09) !important;
+}
+
+/* SmartERP Flagship Card in Light Mode */
+html.light #smarterp {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 55%, #f1f5f9 100%) !important;
+  border-color: rgba(8, 145, 178, 0.35) !important;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.08), 0 0 25px rgba(8, 145, 178, 0.06) !important;
+}
+
+/* Navbar in Light Mode */
+html.light nav[aria-label="Main Navigation"] {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08) !important;
+}
+
+html.light nav[aria-label="Main Navigation"] a:not([data-cursor="HIRE"]):not(.bg-cyan-950\/70),
+html.light nav[aria-label="Main Navigation"] button {
+  color: #334155 !important;
+}
+
+html.light nav[aria-label="Main Navigation"] a:hover:not([data-cursor="HIRE"]):not(.bg-cyan-950\/70) {
+  color: #0891b2 !important;
+  background-color: rgba(15, 23, 42, 0.05) !important;
+}
+
+html.light nav[aria-label="Main Navigation"] .bg-cyan-950\/70 {
+  background-color: rgba(8, 145, 178, 0.12) !important;
+  color: #0e7490 !important;
+  border-color: rgba(8, 145, 178, 0.45) !important;
+}
+
+/* Cyan badges and accents */
+html.light .bg-cyan-950\/40,
+html.light .bg-cyan-950\/50,
+html.light .bg-cyan-950\/60,
+html.light .bg-cyan-950\/70,
+html.light .bg-cyan-500\/15 {
+  background-color: rgba(8, 145, 178, 0.1) !important;
+  color: #0891b2 !important;
+  border-color: rgba(8, 145, 178, 0.3) !important;
+}
+
+html.light .text-cyan-400,
+html.light .text-cyan-300 {
+  color: #0891b2 !important;
+}
+
+/* Indigo badges */
+html.light .bg-indigo-950\/40,
+html.light .bg-indigo-950\/50 {
+  background-color: rgba(79, 70, 229, 0.1) !important;
+  color: #4f46e5 !important;
+  border-color: rgba(79, 70, 229, 0.25) !important;
+}
+
+html.light .text-indigo-400,
+html.light .text-indigo-300 {
+  color: #4f46e5 !important;
+}
+
+/* Emerald badges */
+html.light .bg-emerald-950\/40,
+html.light .bg-emerald-950\/50 {
+  background-color: rgba(5, 150, 105, 0.1) !important;
+  color: #059669 !important;
+  border-color: rgba(5, 150, 105, 0.25) !important;
+}
+
+html.light .text-emerald-400 {
+  color: #059669 !important;
+}
+
+/* Dialogs and Drawers */
+html.light div[role="dialog"] {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  color: #090d16 !important;
+}
+
+html.light div[role="dialog"] span,
+html.light div[role="dialog"] p,
+html.light div[role="dialog"] div {
+  color: #1e293b;
+}
+
+html.light div[role="dialog"] .border-white\/10,
+html.light div[role="dialog"] .border-white\/5 {
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Shimmer Animation */
+@keyframes text-shimmer-sweep {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-text-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(34, 211, 238, 1) 25%,
+    rgba(129, 140, 248, 1) 50%,
+    rgba(255, 255, 255, 0.95) 75%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: text-shimmer-sweep 6s linear infinite;
+}
+
+html.light .animate-text-shimmer {
+  background: linear-gradient(
+    90deg,
+    #090d16 0%,
+    #0891b2 25%,
+    #4f46e5 50%,
+    #090d16 75%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: text-shimmer-sweep 6s linear infinite;
+}
+
+/* Radar Sweep */
+@keyframes radar-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar-sweep {
+  animation: radar-rotate 4s linear infinite;
+}
+
+/* ========================================================
+   PREMIUM "GOING AND COMING" CHROMATIC NAME FLOW ANIMATION
+   ======================================================== */
+
+@keyframes name-color-wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes aurora-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+.animate-name-wave {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #e0f2fe 10%,
+    #38bdf8 24%,
+    #818cf8 42%,
+    #e879f9 58%,
+    #22d3ee 74%,
+    #c084fc 88%,
+    #ffffff 100%
+  );
+  background-size: 280% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: name-color-wave 6.5s ease-in-out infinite;
+  display: inline-block;
+  will-change: background-position;
+}
+
+html.light .animate-name-wave {
+  background: linear-gradient(
+    90deg,
+    #090d16 0%,
+    #0284c7 18%,
+    #4f46e5 40%,
+    #9333ea 58%,
+    #0891b2 75%,
+    #6366f1 88%,
+    #090d16 100%
+  );
+  background-size: 280% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: name-color-wave 6.5s ease-in-out infinite;
+  display: inline-block;
+  will-change: background-position;
+}
+
+.name-aurora-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(115%, 680px);
+  height: 130px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(34, 211, 238, 0.24) 0%,
+    rgba(99, 102, 241, 0.18) 35%,
+    rgba(168, 85, 247, 0.1) 60%,
+    transparent 80%
+  );
+  filter: blur(44px);
+  pointer-events: none;
+  animation: aurora-pulse 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+html.light .name-aurora-glow {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(8, 145, 178, 0.14) 0%,
+    rgba(79, 70, 229, 0.1) 35%,
+    rgba(147, 51, 234, 0.06) 60%,
+    transparent 80%
+  );
+  filter: blur(44px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
